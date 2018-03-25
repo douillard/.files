@@ -37,6 +37,7 @@ NeoBundle 'tpope/vim-liquid'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
 NeoBundle 'digitalrounin/vim-yaml-folds'
+NeoBundle 'nikvdp/ejs-syntax'
 
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' } " specify revision/branch/tag.
 call neobundle#end()      " required 
