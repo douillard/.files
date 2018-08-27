@@ -6,7 +6,8 @@ module.exports = {
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
 
     "extends": [
@@ -22,13 +23,16 @@ module.exports = {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
             "jsx": true
-        }
+        },
+        sourceType: "module"
     },
 
     "rules": {
         "react/prop-types": ["off"],
         "semi": ["error", "always"],
         "no-console": ["warn", { allow: ["info", "error"] }],
+        "indent": ["error", 4, { SwitchCase: 1 }],
+        "linebreak-style": ["error", "unix"],
 
         // "arrow-parens": ["error", "always"],
         // "react/jsx-uses-react": "error",
@@ -38,8 +42,6 @@ module.exports = {
         // "react/no-unescaped-entities": "error",
         // "react/require-default-props": "error",
         // "react/forbid-prop-types": "error",
-        // "indent": ["error", 2, { SwitchCase: 1 }],
-        // "linebreak-style": ["error", "unix"],
         // "quotes": ["error", "single"],
 
     }

@@ -17,6 +17,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'mileszs/ack.vim'
 
 " Syntax Bundles
 NeoBundle 'JSON.vim'
@@ -38,6 +39,9 @@ NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
 NeoBundle 'digitalrounin/vim-yaml-folds'
 NeoBundle 'nikvdp/ejs-syntax'
+"NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'prettier/vim-prettier'
+
 
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' } " specify revision/branch/tag.
 call neobundle#end()      " required 
@@ -76,7 +80,7 @@ set novisualbell
 set nu
 set relativenumber
 set ruler                      " Always show current position
-set shiftwidth=4
+set shiftwidth=2
 set showmatch                  " Show matching brackets when text indicator is over them
 set si                         " Smart indent
 set smartcase                  " When searching try to be smart about cases 
@@ -84,7 +88,7 @@ set smarttab                   " Be smart when using tabs ;)
 set statusline+=%F
 set so=7                       " Set 7 lines to the cursor - when moving vertically using j/k
 set t_vb=
-set tabstop=4                  " 1 tab == 4 spaces
+set tabstop=2                  " 1 tab == 2 spaces
 set textwidth=100
 set tm=500
 set tw=600
@@ -97,6 +101,10 @@ set clipboard^=unnamed,unnamedplus         " allows y to copy to system clipboar
 
 " ---------- Mapping ---------- 
 nmap <leader>w :w!<cr> 
+
+
+
+" ---------- let ---------- 
 let html_no_rendering=1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -110,6 +118,7 @@ let mapleader=','
       vmap <Leader>a: :Tabularize /:\zs<CR>
     endif
 
+let g:ackprg = 'ag --vimgrep'
 
 
 " ---------- Other ---------- 
@@ -125,3 +134,4 @@ let g:formatdef_eslint = '"eslint-formatter"'
 let g:formatters_javascript = ['eslint']
 let g:jsx_ext_required = 0
 
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build'
