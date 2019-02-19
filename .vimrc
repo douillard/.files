@@ -31,9 +31,9 @@ NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'vim-syntastic/syntastic'
+" NeoBundle 'vim-syntastic/syntastic'
 NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'Valloric/MatchTagAlways'
+" NeoBundle 'Valloric/MatchTagAlways'
 NeoBundle 'tpope/vim-liquid'
 NeoBundle 'Chiel92/vim-autoformat'
 NeoBundle 'jeffkreeftmeijer/vim-numbertoggle'
@@ -41,6 +41,12 @@ NeoBundle 'digitalrounin/vim-yaml-folds'
 NeoBundle 'nikvdp/ejs-syntax'
 "NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'prettier/vim-prettier'
+NeoBundle 'junegunn/vim-plug'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'nvie/vim-flake8'
+NeoBundle 'cburroughs/pep8.py'
+NeoBundle 'tell-k/vim-autopep8'
+
 
 
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' } " specify revision/branch/tag.
@@ -51,7 +57,7 @@ NeoBundleCheck            " prompt to install uninstalled bundles
 
 
 " ---------- User Interface ---------- 
-colorscheme peachpuff
+" colorscheme wombat
 hi Search cterm=NONE ctermfg=white ctermbg=blue "hi Search guibg=peru guifg=wheat
 syntax on
 filetype off
@@ -96,13 +102,11 @@ set whichwrap+=<,>,h,l
 set wildignore=*.o,*~,*.pyc    " Ignore compiled files
 set wildmenu                   " Turn on the WiLd menu
 set wrap                       " Wrap lines
-set clipboard^=unnamed,unnamedplus         " allows y to copy to system clipboard
+set clipboard^=unnamed,unnamedplus " allows y to copy to system clipboard
 
 
 " ---------- Mapping ---------- 
 nmap <leader>w :w!<cr> 
-
-
 
 " ---------- let ---------- 
 let html_no_rendering=1
@@ -129,9 +133,21 @@ au BufRead,BufNewFile *.json set ft=json syntax=javascript
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=white ctermbg=red
 
-" eslint auto formatter
+" formatter
+let g:formatter_yapf_style = 'pep8'
 let g:formatdef_eslint = '"eslint-formatter"'
 let g:formatters_javascript = ['eslint']
 let g:jsx_ext_required = 0
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build'
+
+" ---------- AUTOCOMMANDS ---------- 
+" autocmd BufWritePost *.py call Flake8()
+if has("gui_running")
+"  syntax on
+"  set hlsearch
+  colorscheme wombat
+"  set bs=2
+"  set ai
+"  set ruler
+endif

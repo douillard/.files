@@ -15,22 +15,23 @@ fi
 
 alias wget="curl -O"
 
-# Charter Aliases
-alias samt="cd /Users/muirfield/Sandbox/projects/charter/samsung-tv/twctv/javascript"
-alias sama="cd /Users/muirfield/Sandbox/projects/charter/samsung-tv/app"
-alias sam="cd /Users/muirfield/Sandbox/projects/charter/samsung-tv"
-
 alias dd="docker"
 alias dc="docker-compose"
 alias ku="kubectl"
-alias mk="minikube"
+alias gc="gcloud"
+
+#alias python="python3"
+#alias pip="pip3"
 
 alias sb="cd ~/Sandbox"
-alias ex="cd ~/Sandbox/examples"
-alias ch="cd ~/Sandbox/clubhub"
+alias ba="cd ~/Sandbox/baloo"
+alias od="cd ~/Sandbox/orderlydata"
 
-alias pod="~/Sandbox/clubhub/sandbox/pod.sh"
-alias logs="~/Sandbox/clubhub/sandbox/logs.sh"
+#alias ecs="ecs-cli"
+#alias ec="ecs-cli compose"
+#alias cf="aws cloudformation"
+
+alias baloo='ssh -t chris@baloocare.com "cd /var/www/staging ; ./build.sh ; bash"'
 
 alias gitd='/usr/bin/git --git-dir=/home/ldap/cdouillard/.cfg/ --work-tree=/home/ldap/cdouillard'
 
@@ -62,7 +63,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export DOCKER_ACCT=clubhubdocker
+export DOCKER_ACCT=orderlyhealth
 export APP_ENV=development
 # export NODE_ENV=development
 export DEV_ENV=cdouillard
@@ -71,12 +72,18 @@ export NODE_PORT=3000
 export PATH=/usr/local/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/data/db:$PATH
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+ . "/usr/local/opt/nvm/nvm.sh"
 
 export GOPATH=$HOME/work
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/muirfield/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/muirfield/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/chris/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/chris/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/muirfield/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/muirfield/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/Users/chris/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/chris/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# git auto complete
+# [ -d /usr/local/etc/bash_completion.d ] && . /usr/local/etc/bash_completion.d/*
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
