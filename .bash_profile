@@ -19,6 +19,7 @@ alias dd="docker"
 alias dc="docker-compose"
 alias ku="kubectl"
 alias gc="gcloud"
+alias kuc="kubectl config"
 
 #alias python="python3"
 #alias pip="pip3"
@@ -78,12 +79,12 @@ export GOPATH=$HOME/work
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
+# git auto complete
+# [ -d /usr/local/etc/bash_completion.d ] && . /usr/local/etc/bash_completion.d/*
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/chris/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/chris/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/chris/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/chris/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
-# git auto complete
-# [ -d /usr/local/etc/bash_completion.d ] && . /usr/local/etc/bash_completion.d/*
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
